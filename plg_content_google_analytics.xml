@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="3.8" group="content" method="upgrade">
+	<name>PLG_SYSTEM_PLG_CONTENT_GOOGLE_ANALYTICS</name>
+	<creationDate>21.09.2020</creationDate>
+	<author>Gartes</author>
+	<authorEmail></authorEmail>
+	<authorUrl></authorUrl>
+	<copyright>A copyright</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<version>1.0.0</version>
+	<description>PLG_SYSTEM_PLG_CONTENT_GOOGLE_ANALYTICS_XML_DESCRIPTION</description>
+
+	<version_gnz11>0.5.1</version_gnz11>
+
+	<!-- Scripts to run on installation -->
+	<scriptfile>script.php</scriptfile>
+
+
+
+	<!-- Plugin files -->
+	<files>
+		<folder>language</folder>
+		<filename>LICENSE</filename>
+		<filename plugin="plg_content_google_analytics">plg_content_google_analytics.php</filename>
+		<filename>README.md</filename>
+		<filename>script.php</filename>
+		<filename>update.xml</filename>
+	</files>
+
+	<!-- Config parameter -->
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="sample"
+					type="text"
+					default="42"
+					label="PLG_SYSTEM_PLG_CONTENT_GOOGLE_ANALYTICS_SAMPLE_LABEL"
+					description="PLG_SYSTEM_PLG_CONTENT_GOOGLE_ANALYTICS_SAMPLE_DESCRIPTION"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+
+	<!-- Update servers -->
+	<updateservers>
+		<server type="extension" priority="1" name="plg_content_google_analytics">https://raw.githubusercontent.com/GJPlugins/plg_content_google_analytics/master/update.xml</server>
+	</updateservers>
+</extension>
