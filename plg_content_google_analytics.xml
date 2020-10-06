@@ -7,7 +7,7 @@
 	<authorUrl></authorUrl>
 	<copyright>A copyright</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 
 	<description>PLG_SYSTEM_PLG_CONTENT_GOOGLE_ANALYTICS_XML_DESCRIPTION</description>
 
@@ -20,7 +20,10 @@
 
 	<!-- Plugin files -->
 	<files>
+		<folder>assets</folder>
 		<folder>language</folder>
+		<folder>models</folder>
+		<folder>tmpl</folder>
 		<filename>LICENSE</filename>
 		<filename plugin="plg_content_google_analytics">plg_content_google_analytics.php</filename>
 		<filename>README.md</filename>
@@ -32,14 +35,93 @@
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
-				<field
-					name="sample"
+
+				<fieldset addfieldpath="/plugins/content/plg_content_google_analytics/models/fields" />
+				<field name="toolbar"
+					   type="toolbar"
+					   load_js="plugins/content/plg_content_google_analytics/assets/js/plg_content_google_analytics.import-export.js"
+					   path_xml="/plugins/content/plg_content_google_analytics/plg_content_google_analytics.xml"/>
+
+				<fieldset addfieldpath="/libraries/GNZ11/Extensions/Fields" />
+				<field name="version_plugin"
+					type="version"
+					path_xml="/plugins/content/plg_content_google_analytics/plg_content_google_analytics.xml"
+					class="version_plugin "
+					filter="raw" />
+
+
+					
+					
+				
+				
+				<field name="gtm_container_id"
 					type="text"
-					default="42"
-					label="PLG_SYSTEM_PLG_CONTENT_GOOGLE_ANALYTICS_SAMPLE_LABEL"
-					description="PLG_SYSTEM_PLG_CONTENT_GOOGLE_ANALYTICS_SAMPLE_DESCRIPTION"
-				/>
+					default="GTM-T62TJ48"
+					class="gtm_container_id "
+					size="20"
+					readonly=""
+					required=""
+					label="PLG_CONTENT_GOOGLE_ANALYTICS_GTM_CONTAINER_ID"
+					description="PLG_CONTENT_GOOGLE_ANALYTICS_GTM_CONTAINER_ID_DESC"
+					showon=""
+					hint=""
+					filter="raw" />
+				<field name="currency_code"
+					type="text"
+					default="UAH"
+					class="currency_code "
+					size="8"
+					readonly=""
+					required=""
+					label="PLG_CONTENT_GOOGLE_ANALYTICS_CURRENCY_CODE"
+					description="PLG_CONTENT_GOOGLE_ANALYTICS_CURRENCY_CODE_DESC"
+					showon=""
+					hint=""
+					filter="raw" />
+					
+					
+				<field name="on_context_view"
+					type="radio"
+					default="0"
+					readonly="0"
+					label="PLG_CONTENT_GOOGLE_ANALYTICS_ON_CONTEXT_VIEW"
+					description="PLG_CONTENT_GOOGLE_ANALYTICS_ON_CONTEXT_VIEW_DESC"
+					class="btn-group btn-group-yesno"
+					showon=""
+					 
+					>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
 			</fieldset>
+			<fieldset name="blocks">
+				<field name="field-block" type="subform" multiple="true" min="1"
+					   formsource="plugins/content/plg_content_google_analytics/assets/xml/block_product.xml"
+					   label="" description="Subform Field Description" />
+			</fieldset>
+			<fieldset name="cart">
+				<field name="cart_context"
+					type="text"
+					default=""
+					class="cart_context "
+					size="20"
+					readonly=""
+					required=""
+					label="PLG_CONTENT_GOOGLE_ANALYTICS_CART_CONTEXT"
+					description="PLG_CONTENT_GOOGLE_ANALYTICS_CART_CONTEXT_DESC"
+					showon=""
+					hint=""
+					filter="raw" />
+
+				<field name="field-cart-product-selectors" type="subform" multiple="1" min="1" max="1"
+					   formsource="plugins/content/plg_content_google_analytics/assets/xml/cart-product-selectors.xml"
+					   label="PLG_CONTENT_GOOGLE_ANALYTICS_CART_STEP_PRODUCT_SELECTORS" description="PLG_CONTENT_GOOGLE_ANALYTICS_CART_STEP_PRODUCT_SELECTORS_DESC" />
+
+				<field name="field-cart" type="subform" multiple="true" min="1" buttons="move"
+					   formsource="plugins/content/plg_content_google_analytics/assets/xml/cart-steps.xml"
+					   label="PLG_CONTENT_GOOGLE_ANALYTICS_CART_STEP_CHECKOUT" description="PLG_CONTENT_GOOGLE_ANALYTICS_CART_STEP_CHECKOUT_DESC" />
+			</fieldset>
+			
 		</fields>
 	</config>
 

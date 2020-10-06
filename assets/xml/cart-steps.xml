@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+
+
+    <field name="selector_product"
+    	type="text"
+    	default=""
+    	class="selector_product "
+    	size="20"
+    	readonly=""
+    	required=""
+    	label="BLOCK_PRODUCT_SELECTOR_PRODUCT"
+    	description="BLOCK_PRODUCT_SELECTOR_PRODUCT_DESC"
+    	showon=""
+    	hint=""
+    	filter="raw" />
+    <field name="selector_product-name"
+    	type="text"
+    	default=""
+    	class="selector_product-name "
+    	size="20"
+    	readonly=""
+    	required=""
+    	label="BLOCK_PRODUCT_SELECTOR_PRODUCT_NAME"
+    	description="BLOCK_PRODUCT_SELECTOR_PRODUCT_NAME_DESC"
+    	showon=""
+    	hint=""
+    	filter="raw" />
+    <field name="selector_product-price"
+    	type="text"
+    	default=""
+    	class="selector_product-price "
+    	size="20"
+    	readonly=""
+    	required=""
+    	label="BLOCK_PRODUCT_SELECTOR_PRODUCT_PRICE"
+    	description="BLOCK_PRODUCT_SELECTOR_PRODUCT_PRICE_DESC"
+    	showon=""
+    	hint=""
+    	filter="raw" />
+    <field name="selector_product-id"
+    	type="text"
+    	default=""
+    	class="selector_product-id "
+    	size="20"
+    	readonly=""
+    	required=""
+    	label="BLOCK_PRODUCT_SELECTOR_PRODUCT_ID"
+    	description="BLOCK_PRODUCT_SELECTOR_PRODUCT_ID_DESC"
+    	showon=""
+    	hint=""
+    	filter="raw" />
+    <field name="selector_product-brand"
+    	type="text"
+    	default=""
+    	class="selector_product-brand "
+    	size="20"
+    	readonly=""
+    	required=""
+    	label="BLOCK_PRODUCT_SELECTOR_PRODUCT_BRAND"
+    	description="BLOCK_PRODUCT_SELECTOR_PRODUCT_BRAND_DESC"
+    	showon=""
+    	hint=""
+    	filter="raw" />
+    <field name="selector_product-category"
+    	type="text"
+    	default=""
+    	class="selector_product-category "
+    	size="20"
+    	readonly=""
+    	required=""
+    	label="BLOCK_PRODUCT_SELECTOR_PRODUCT_CATEGORY"
+    	description="BLOCK_PRODUCT_SELECTOR_PRODUCT_CATEGORY_DESC"
+    	showon=""
+    	hint=""
+    	filter="raw" />
+    <field name="selector_product-click_in_product"
+    	type="text"
+    	default=""
+    	class="selector_product-click_in_product "
+    	size="20"
+    	readonly=""
+    	required=""
+    	label="BLOCK_PRODUCT_SELECTOR_PRODUCT_CLICK_IN_PRODUCT"
+    	description="BLOCK_PRODUCT_SELECTOR_PRODUCT_CLICK_IN_PRODUCT_DESC"
+    	showon=""
+    	hint=""
+    	filter="raw" />
+    <field name="selector_product-click_add_to_cart"
+    	type="text"
+    	default=""
+    	class="selector_product-click_add_to_cart "
+    	size="20"
+    	readonly=""
+    	required=""
+    	label="BLOCK_PRODUCT_SELECTOR_PRODUCT_CLICK_ADD_TO_CART"
+    	description="BLOCK_PRODUCT_SELECTOR_PRODUCT_CLICK_ADD_TO_CART_DESC"
+    	showon=""
+    	hint=""
+    	filter="raw" />
+
+    	
+    	
+    	
+    	
+    	
+    
+</form>
