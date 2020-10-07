@@ -87,7 +87,7 @@ class plgContentPlg_content_google_analytics extends CMSPlugin
 
     public function onContentPrepare($context, &$row, &$params, $page = 0)
     {
-
+        return  true ;
         
     }
 
