@@ -7,7 +7,7 @@
 	<authorUrl></authorUrl>
 	<copyright>A copyright</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<version>1.0.2</version>
+	<version>1.0.3</version>
 
 	<description>PLG_SYSTEM_PLG_CONTENT_GOOGLE_ANALYTICS_XML_DESCRIPTION</description>
 
@@ -66,6 +66,21 @@
 					showon=""
 					hint=""
 					filter="raw" />
+				<field name="loadMethod"
+					type="list"
+					default="0"
+					required=""
+					label="PLG_CONTENT_GOOGLE_ANALYTICS_LOAD_METHOD"
+					description="PLG_CONTENT_GOOGLE_ANALYTICS_LOAD_METHOD_DESC"
+					class="loadMethod "
+					multiple="false"
+					readonly=""
+					showon=""
+					filter="raw" >
+						<option value="0">PLG_CONTENT_GOOGLE_ANALYTICS_LOAD_METHOD_IN_HEAD_HTML</option>
+						<option value="1">PLG_CONTENT_GOOGLE_ANALYTICS_LOAD_METHOD_IN_BODY_SCRIPT</option>
+					</field>
+
 				<field name="currency_code"
 					type="text"
 					default="UAH"

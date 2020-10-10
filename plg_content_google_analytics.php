@@ -87,6 +87,7 @@ class plgContentPlg_content_google_analytics extends CMSPlugin
 
     public function onContentPrepare($context, &$row, &$params, $page = 0)
     {
+
         return  true ;
         
     }
@@ -158,6 +159,9 @@ class plgContentPlg_content_google_analytics extends CMSPlugin
     public function onContentAfterDisplay($context, &$row, &$params, $page = 0)
     {
 
+
+
+
         if ( !in_array( $context , $this->contextArr )) return  ; #END IF
 
         $doc = \Joomla\CMS\Factory::getDocument();
@@ -174,12 +178,6 @@ class plgContentPlg_content_google_analytics extends CMSPlugin
             $doc->addScriptOptions('plgContentGoogleAnalytics' , $SettingsJS , true ) ;
             $session->clear('dataPurchase' , 'plgContentGoogleAnalytics' );
         }#END IF
-
-
-
-
-
-
 
         /**
          * Загрузка ядра JS !!!!
@@ -230,9 +228,24 @@ class plgContentPlg_content_google_analytics extends CMSPlugin
         $contextBlockCart = $this->params->get('field-cart-product-selectors' , false )->{'field-cart-product-selectors0'} ;
         $is_Cart = $this->params->get('cart_context' , false) == $context ;
 
+        if ( $this->params->get('loadMethod' , false ) == 0 )
+        {
+            $GTM_ID = $this->params->get('gtm_container_id' , false ) ;
+            $doc->addScriptDeclaration("(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','".$GTM_ID."');" );
+
+        }#END IF
+
+
+
         $SettingsJS = [
             # ID Контейнера GTM
             'GTM_ID'=> $this->params->get('gtm_container_id' , false ) ,
+            'loadMethod'=> $this->params->get('loadMethod' , false ) ,
+
             'ver'=> $this->params->get('version_plugin' , '1.0.0' )  ,
             # Код Валюты
             'currencyCode'=> $this->params->get('currencyCode' , 'UAH' ) ,

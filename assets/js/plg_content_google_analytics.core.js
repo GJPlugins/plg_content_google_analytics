@@ -46,14 +46,11 @@ window.plgContentGoogleAnalyticsCore = function (){
         $.extend(  true , self.settigs ,  Options   );
         siteUrl = Joomla.getOptions('GNZ11',{}).Ajax.siteUrl
 
-
-
         // Загрузка компонента для работы в корзине покупателя
         if ( self.settigs.is_Cart ){
             self.load.js(siteUrl + self.assets.cart + '?v=' + this.settigs.ver );
             return;
         }
-
 
         // Настройки вех блоков текущего контекста
         var contextBlock = self.settigs.contextBlock ;
@@ -102,7 +99,6 @@ window.plgContentGoogleAnalyticsCore = function (){
 
         console.log(self.ProductBlockDataInfo)
     }
-
     /**
      * Установка пользовательсеих блоков по селекторам из настроек плагина
      */
@@ -349,8 +345,6 @@ window.plgContentGoogleAnalyticsCore = function (){
 
         // Проверка списков товаров - которые попали в зону видимости при скролле
         $(document).on('scroll.impressions-list' ,self.checkEcListPosition);
-
-
 
         // $(document).on('scroll.impressions' ,self.checkMyPosition);
 
@@ -747,6 +741,9 @@ window.plgContentGoogleAnalyticsCore = function (){
      * Загрузка контейнера GTM
      */
     this.loadGTM = function (){
+
+        if ( +self.settigs.loadMethod === 0 ) return  ;
+
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
                 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -759,9 +756,6 @@ window.plgContentGoogleAnalyticsCore = function (){
      * @param  $element
      */
     this.checkPosition = function ( $element  ){
-
-
-
         // координаты дива
         var div_position = $element.offset();
         // отступ сверху
